@@ -1,7 +1,7 @@
 # encoding: utf-8
 require "inspec/plugins"
 require "thor"
-require "example/control"
+require "inspec-plugin-example/control"
 
 module Example
   class CLI < Thor
