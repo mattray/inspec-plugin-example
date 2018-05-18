@@ -4,8 +4,6 @@
 # Copyright:: 2018, Chef Software, Inc <legal@chef.io>
 #
 
-require "example"
-
 require "inspec/objects"
 
 module Example
