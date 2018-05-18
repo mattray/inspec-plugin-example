@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.license       = "Apache-2.0"
 
   spec.files = %w{
-    README.md inspec-example-plugin.gemspec Gemfile
+    README.md inspec-plugin-example.gemspec Gemfile
   } + Dir.glob(
     "{bin,docs,examples,lib,tasks,test}/**/*", File::FNM_DOTMATCH
   ).reject { |f| File.directory?(f) }
