@@ -1,0 +1,26 @@
+# coding: utf-8
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require "example/version"
+
+Gem::Specification.new do |spec|
+  spec.name          = "inspec-plugin-example"
+  spec.version       = Example::VERSION
+  spec.authors       = ["Matt Ray"]
+  spec.email         = ["matt@chef.io"]
+  spec.summary       = "InSpec Plugin Example"
+  spec.description   = "Example for implementing an InSpec plugin."
+  spec.homepage      = "https://github.com/inspec/inspec-plugin-example"
+  spec.license       = "Apache-2.0"
+
+  spec.files = %w{
+    README.md inspec-example-plugin.gemspec Gemfile
+  } + Dir.glob(
+    "{bin,docs,examples,lib,tasks,test}/**/*", File::FNM_DOTMATCH
+  ).reject { |f| File.directory?(f) }
+
+  spec.require_paths = ["lib"]
+
+  spec.add_dependency "inspec", ">=1.51.6", "<3.0.0"
+end
