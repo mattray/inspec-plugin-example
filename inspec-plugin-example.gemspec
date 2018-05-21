@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["matt@chef.io"]
   spec.summary       = "InSpec Plugin Example"
   spec.description   = "Example for implementing an InSpec plugin."
-  spec.homepage      = "https://github.com/inspec/inspec-plugin-example"
+  spec.homepage      = "https://github.com/mattray/inspec-plugin-example"
   spec.license       = "Apache-2.0"
 
   spec.files = %w{

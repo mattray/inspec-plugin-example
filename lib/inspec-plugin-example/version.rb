@@ -6,5 +6,5 @@
 #
 
 module Example
-  VERSION = "0.2.0".freeze
+  VERSION = "0.3.0".freeze
 end

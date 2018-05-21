@@ -2,6 +2,7 @@
 require "inspec/plugins"
 require "thor"
 require "inspec-plugin-example/control"
+require "inspec-plugin-example/second"
 
 module Example
   class CLI < Thor
@@ -18,8 +19,20 @@ module Example
     def control
       Example::Control.print
     end
-
   end
 
   Inspec::Plugins::CLI.add_subcommand(CLI, "example", "example SUBCOMMAND ...", "Example commands", {})
+end
+
+module SecondExample
+  class CLI < Thor
+    namespace "example2"
+
+    desc "second", "Second InSpec subcommand example"
+    def second
+      SecondExample::Second.print
+    end
+  end
+
+  Inspec::Plugins::CLI.add_subcommand(CLI, "example2", "example2 SUBCOMMAND ...", "Additional Example commands", {})
 end
