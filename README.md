@@ -21,7 +21,7 @@ Then install the `inspec-plugin-example` plugin via `~/.inspec/plugins` or a gem
 
 ```bash
 # Install `inspec-plugin-example` via a symlink:
-git clone git@github.com:mattary/inspec-plugin-example ~/inspec-plugin-example
+git clone git@github.com:mattray/inspec-plugin-example ~/inspec-plugin-example
 mkdir -p ~/.inspec/plugins
 ln -s ~/inspec-plugin-example/ ~/.inspec/plugins/inspec-plugin-example
 inspec example help

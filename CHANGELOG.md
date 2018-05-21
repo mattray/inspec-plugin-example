@@ -9,8 +9,10 @@ This is the current, previous and future development milestones and contains the
 # 0.3.0 #
 * Example of multiple subcommands
 
+# 0.4.0 #
+* Inspec::Log.debug example
+
 # BACKLOG #
-* How does logging with InSpec::Log work?
 * Add some Tags
 * Add Testing
 * Examples of additional InSpec features that may be useful to plugin developers...

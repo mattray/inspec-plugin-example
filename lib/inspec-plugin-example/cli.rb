@@ -15,8 +15,14 @@ module Example
       say("InSpec Example Plugin v#{Example::VERSION}")
     end
 
+    class_option :debug,
+      :desc    => "Verbose debugging messages",
+      :type    => :boolean,
+      :default => false
+
     desc "control", "Display an example InSpec Control"
     def control
+      Inspec::Log.level = :debug if options[:debug]
       Example::Control.print
     end
   end

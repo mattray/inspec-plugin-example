@@ -12,6 +12,7 @@ module Example
   class Control
 
     def self.print
+      Inspec::Log.debug "Example::Control debugging message"
       # Example of adding a Control
       ctrl = ::Inspec::Control.new
       ctrl.id = "InSpecPluginExample"
