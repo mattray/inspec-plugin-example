@@ -9,3 +9,4 @@ This is the current, previous and future development milestones and contains the
 # BACKLOG #
 * Examples of additional InSpec features that may be useful to plugin developers...
 * Add some Tags
+* Add example tests
