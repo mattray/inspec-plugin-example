@@ -6,10 +6,8 @@
 
 module SecondExample
   class Second
-
     def self.print
-      puts "another example print out"
+      puts 'another example print out'
     end
-
   end
 end
