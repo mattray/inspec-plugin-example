@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "inspec", ">=1.51.6", "<3.0.0"
+  spec.add_dependency "inspec", ">2.3"
 end
