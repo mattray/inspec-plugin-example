@@ -12,7 +12,9 @@ This is the current, previous and future development milestones and contains the
 # 0.4.0 #
 * Inspec::Log.debug example
 
+# 0.5.0 #
+* Become a real InSpec plugin.
+* Added option and class_option examples.
+
 # BACKLOG #
-* Add some Tags
 * Add Testing
-* Examples of additional InSpec features that may be useful to plugin developers...

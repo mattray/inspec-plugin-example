@@ -6,7 +6,7 @@ gemspec
 group :test do
   gem "bundler"
   gem "rake"
-  gem "chefstyle"
+  gem 'rubocop', '= 0.49.1'
 end
 
 group :tools do

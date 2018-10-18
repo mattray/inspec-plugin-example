@@ -1,62 +1,68 @@
 # InSpec Plugin Example
 
-This repository provides an example of building a plugin for use with [InSpec](https://inspec.io).
+This repository provides an example of building a version 2 plugin for use with [InSpec](https://inspec.io). It was built following the instructions from the [Developing InSpec Plugins for the v2 plugin API](https://github.com/inspec/inspec/blob/master/docs/dev/plugins.md) instructions.
 
 # Requirements #
 
-This has been built with Ruby 2.4.4 and InSpec 2.0. It most likely works with InSpec 1.5.x and its versions of Ruby.
+This has been built with Ruby 2.5.1 and InSpec 3.0. It most likely works with InSpec 2.3 and later its versions of Ruby.
 
 # Installation #
 
-`inspec-plugin-example` is a plugin for InSpec and may be installed as follows
+`inspec-plugin-example` is a plugin for InSpec and may be installed by following the [Developing InSpec Plugins for the v2 plugin API](https://github.com/inspec/inspec/blob/master/docs/dev/plugins.md#how-plugins-are-located-and-loaded) instructions.
 
-```bash
-# install InSpec
-gem install inspec
-```
+## ~/.inspec/plugins.json
 
-Then install the `inspec-plugin-example` plugin via `~/.inspec/plugins` or a gem build:
+When developing this plugin, this was the contents of my `~/.inspec/plugins.json`
 
-## * for development: ##
-
-```bash
-# Install `inspec-plugin-example` via a symlink:
-git clone git@github.com:mattray/inspec-plugin-example ~/inspec-plugin-example
-mkdir -p ~/.inspec/plugins
-ln -s ~/inspec-plugin-example/ ~/.inspec/plugins/inspec-plugin-example
-inspec example help
-```
-
-## * or build a gem: ##
-
-```bash
-# Build the `inspec-plugin-example` then install:
-git clone https://github.com/mattray/inspec-plugin-example && cd inspec-plugin-example && gem build *gemspec && gem install *gem
-inspec example help
+```json
+{
+    "plugins_config_version" : "1.0.0",
+    "plugins": [
+        {
+            "name": "inspec-plugin-example",
+            "installation_type": "path",
+            "installation_path": "/Users/mattray/ws/inspec-plugin-example/lib/inspec-plugin-example.rb"
+        }
+    ]
+}
 ```
 
 # Usage #
 
-    inspec example help
-
     inspec example control
+
+    inspec example help
 
     inspec example version
 
+    inspec example2 second
+
 # Code Examples #
+
+## lib/inspec-plugin-example.rb ##
+
+Entry point for the plugin code.
+
+## lib/inspec-plugin-example/plugin.rb ##
+
+Declares `example` and `example2` as InSpec subcommands within the `inspec-plugin-example` namespace.
 
 ## lib/inspec-plugin-example/cli.rb ##
 
-InSpec uses [Thor](http://whatisthor.com/) for adding command-line options. This shows how to add Thor subcommands for use with InSpec.
+Defines the `example` and `example2` CliCommands for use with InSpec.
 
-## lib/example/control.rb ##
+## lib/inspec-plugin-example/control.rb ##
 
-This shows how to use InSpec objects for building and printing Controls.
+Example of calling another module from a CliCommand used by `inspec example control`
 
-## lib/example/version.rb ##
+## lib/inspec-plugin-example/second.rb ##
 
-The version of the plugin may be defined and exposed with ```inspec example version```
+Example of a second CliCommand used by `inspec example2 control`
+
+## lib/inspec-plugin-example/version.rb ##
+
+The version of the plugin may be defined and exposed with `inspec example version`
 
 # Code #
 
-InSpec uses ```chefstyle``` for code formatting.
+Uses the `.rubocop.yml` from InSpec for code formatting.
